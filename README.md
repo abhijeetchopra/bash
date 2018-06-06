@@ -16,22 +16,24 @@
 ### Downloading single file on Linux ###
 * Run the following commands on terminal  
 
-* To download the script   
+```
+# download the script
+wget https://raw.githubusercontent.com/abhijeetchopra/Bash/master/mkdirs.sh
 
-``wget https://raw.githubusercontent.com/abhijeetchopra/Bash/master/mkdir.sh``  
+# add execute permissions to mkdirs.sh
+chmod +x mkdirs.sh
 
-* To run the script
-
-``sh mkdir.sh``
-
+# run the script
+sh mkdir.sh
+```
 
 ### Downloading single file on Windows ###
 * On a bash terminal, run the following commands:  
 
-* To download the script    
+```
+# download the script    
+curl https://raw.githubusercontent.com/abhijeetchopra/Bash/master/mkdirs.sh -o mkdirs.sh
 
-``curl https://raw.githubusercontent.com/abhijeetchopra/Bash/master/mkdir.sh -o mkdir.sh``  
-
-* To run the script  
-
-``sh mkdir.sh``  
+#run the script
+sh mkdir.sh
+```
