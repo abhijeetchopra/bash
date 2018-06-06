@@ -1,20 +1,16 @@
 # Bash # 
 
 ### What is this repository for? ### 
-* I am compiling and maintaining scripts with procedures and commands that I want to keep handy 
+I am compiling and maintaining scripts with procedures and commands that I want to keep handy 
 
 
-### How do I get set up? ### 
+### Cloning the entire repository ###  
 
-* To download all the files, clone the entire repository    
-
-``git clone https://github.com/abhijeetchopra/Bash.git``  
-
-* To download a single file follow steps described below  
+``git clone https://github.com/abhijeetchopra/Bash.git``    
 
 
 ### Downloading single file on Linux ###
-* Run the following commands on terminal  
+Run the following commands on terminal  
 
 ```
 # download the script
@@ -24,16 +20,16 @@ wget https://raw.githubusercontent.com/abhijeetchopra/Bash/master/mkdirs.sh
 chmod +x mkdirs.sh
 
 # run the script
-sh mkdir.sh
+sh mkdirs.sh
 ```
 
 ### Downloading single file on Windows ###
-* On a bash terminal, run the following commands:  
+On a bash terminal, run the following commands:  
 
 ```
 # download the script    
 curl https://raw.githubusercontent.com/abhijeetchopra/Bash/master/mkdirs.sh -o mkdirs.sh
 
 #run the script
-sh mkdir.sh
+sh mkdirs.sh
 ```
