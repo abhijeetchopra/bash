@@ -33,6 +33,6 @@ On a bash terminal, run the following commands:
 # download the script    
 curl https://raw.githubusercontent.com/abhijeetchopra/Bash/master/mkdirs.sh -o mkdirs.sh
 
-#run the script
+# run the script
 sh mkdirs.sh
 ```
