@@ -6,7 +6,10 @@ I am compiling and maintaining scripts with procedures and commands that I want 
 
 ### Cloning the entire repository ###  
 
-``git clone https://github.com/abhijeetchopra/Bash.git``    
+```
+# clone repository
+git clone https://github.com/abhijeetchopra/Bash.git
+```
 
 
 ### Downloading single file on Linux ###
