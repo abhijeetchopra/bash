@@ -1,48 +1,45 @@
-# --------------------------------------
-# Auth: Abhijeet Chopra
-# Date: Tue Jun 5, 2018
-# Desc: Backup Script
-# --------------------------------------
+#!/bin/bash
 
-# debugging settings - switch between true/false
-debug="false"
+# This script takes a timestamped tarball of the directory it is in and places
+# it in a backups directory within the working directory
 
-# storing current working directory
-prev_wd=$(pwd)
+# set debugging flag - accepted values: true|false
+debug="true"
 
-# chanding directory to this file's parent dir
-cd "$(dirname "$0")"
+# function to print debug message
+echodebug () {
+	if [ $debug == 'true' ]
+	then
+		echo "$1"
+		echo
+	fi
+}
 
-# source
-src="./"     # all files in current directory
+echodebug "Initiating Backup..."
 
-# destination
-dest="./"   # current directory
-
-# archive_name
+# generate timestamped archive name
 timestamp=$(date +%Y-%m-%d_%H-%M-%S)
 archive_name="Backup_"$timestamp".tar"
 
-# printing initial status messages
-if [ $debug == 'true' ]
-then
-	echo
-	echo "Initiating Backup..."
-	echo
+# create backup directory if doesn't exist
+if [ ! -d ./Backups ]; then
+  echodebug "Backup directory not found. Creating it..."
+  mkdir -p ./Backups;
 fi
 
-# creating tarball
-tar --exclude='Backup*.tar' -cf $dest/$archive_name -C $src .
+# create tarball
+echodebug "Creating tarball..."
 
+tar \
+--exclude='backup.sh'   `# exclude this backup script itself` \
+--exclude='Backups'     `# exclude the backups directory` \
+-cf ./Backups/$archive_name -C ./ .
 
-# printing exiting message
+echodebug "Backup Complete."
+
+echodebug "Listing Backups..."
+
 if [ $debug == 'true' ]
 then
-	echo "File \"$archive_name\" created."
-	echo
-	echo "Backup Complete."
-	echo
+	ls -1h Backups/
 fi
-
-# restoring previous working directory
-cd "$prev_wd"
